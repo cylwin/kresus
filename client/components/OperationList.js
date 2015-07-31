@@ -10,7 +10,7 @@ import {AmountWell, FilteredAmountWell} from './AmountWell';
 import SearchComponent from './SearchOperationList';
 import T from './Translated';
 
-import numbro from "numbro";
+//import numbro from "numbro";
 
 // If the length of the short label (of an operation) is smaller than this
 // threshold, the raw label of the operation will be displayed in lieu of the
@@ -175,7 +175,7 @@ class OperationComponent extends React.Component {
             </span>;
         }
 
-        let amount = numbro(op.amount).format('0 0.00')
+        let amount = Math.round(op.amount*100) / 100;
         return (
             <tr className={rowClassName}>
                 <td>
